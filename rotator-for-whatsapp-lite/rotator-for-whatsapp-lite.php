@@ -271,8 +271,8 @@ function rwa_lite_page()
 </div>
 
 <script>
-    const RWA_LITE_MAX_AGENTS = <? php echo (int)RWA_LITE_MAX_AGENTS; ?>;
-    let _rwaLiteRowIdx = <? php echo (int)count((array)$agents); ?>;
+    const RWA_LITE_MAX_AGENTS = <?php echo (int)RWA_LITE_MAX_AGENTS; ?>;
+    let _rwaLiteRowIdx = <?php echo (int)count((array)$agents); ?>;
 
     function rwaLiteUpdateAddButton() {
         const rows = document.querySelectorAll('#agents-table tbody tr.rwa-lite-agent-row');
@@ -595,7 +595,7 @@ add_action('wp_footer', function () {
 
 <script>
     document.addEventListener('DOMContentLoaded', function () {
-        const agents = <? php echo wp_json_encode($agents, JSON_HEX_TAG | JSON_HEX_AMP); ?>;
+        const agents = <?php echo wp_json_encode($agents, JSON_HEX_TAG | JSON_HEX_AMP); ?>;
         const msgGlobal = "<?php echo esc_js($msg_global); ?>";
 
         const now = new Date();
