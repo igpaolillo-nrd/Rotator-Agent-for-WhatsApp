@@ -31,8 +31,8 @@
 - [Lite vs Premium](#-lite-vs-premium)
 - [Instalación](#-instalación)
 - [Configuración](#-configuración)
+- [Preguntas Frecuentes](#-preguntas-frecuentes)
 - [Stack Técnico](#-stack-técnico)
-- [FAQ](#-faq)
 - [Screenshots](#-screenshots)
 - [Changelog](#-changelog)
 - [Contribuir](#-contribuir)
@@ -80,16 +80,13 @@ Si no hay ningún agente activo en el momento del clic, el botón permanece ocul
 ## 🆓 Lite vs Premium
 
 | Característica | Lite (Gratis) | Premium |
-|:---|:---:|:---:|
+|:---:|:---:|:---:|
 | Agentes | **2 máximo** | Ilimitados |
 | Rotación round-robin | ✅ | ✅ |
 | Horarios nocturnos | ✅ | ✅ |
 | Mensaje predefinido | ✅ | ✅ |
 | Teléfono alternativo (fallback) por franja horaria | ❌ | ✅ |
-| Personalización de estilos avanzada | ❌ | ✅ |
 | Soporte prioritario | ❌ | ✅ |
-| Estadísticas de clics | ❌ | ✅ |
-| Integración con Google Analytics | ❌ | ✅ |
 
 🔗 **[Solicitar versión Premium](https://nrd.com.ar/contacto)**
 
@@ -113,7 +110,7 @@ Si no hay ningún agente activo en el momento del clic, el botón permanece ocul
 # Clonar el repositorio
 git clone https://github.com/igpaolillo-nrd/Rotator-Agent-for-WhatsApp.git
 
-# Subir la carpeta del plugin a /wp-content/plugins/ via FTP/SFTP
+# Subir la carpeta a /wp-content/plugins/ via FTP/SFTP
 cp -r Rotator-Agent-for-WhatsApp/agent-rotator-for-wa /ruta/a/tu/wordpress/wp-content/plugins/
 ```
 
@@ -134,6 +131,28 @@ Luego activalo desde **Plugins > Plugins instalados**.
 
 ---
 
+## ❓ Preguntas Frecuentes
+
+**¿Cuántos agentes puedo agregar en la versión gratis?**
+> La versión Lite permite hasta 2 agentes. La versión Premium es ilimitada.
+
+**¿El botón se muestra cuando no hay agentes activos?**
+> No. El botón permanece oculto si ningún agente está dentro de su horario y días configurados.
+
+**¿Puedo configurar turnos nocturnos?**
+> Sí. Si la hora de inicio es posterior a la de fin (ej: 22:00–06:00), el plugin lo interpreta como un turno overnight.
+
+**¿Es compatible con constructores de páginas?**
+> Sí. El botón se inyecta vía `wp_footer`, por lo que funciona con Elementor, Divi, Beaver Builder y cualquier tema estándar de WordPress.
+
+**¿Cómo debe ser el formato del número de teléfono?**
+> Solo dígitos, de 6 a 15 caracteres. Incluí el código de país sin el signo `+` (ej: `5491158887777`).
+
+**¿Ralentiza mi sitio web?**
+> No. El plugin es completamente ligero. No carga frameworks pesados y utiliza JavaScript vanilla.
+
+---
+
 ## 🛠️ Stack Técnico
 
 | Tecnología | Uso |
@@ -143,28 +162,6 @@ Luego activalo desde **Plugins > Plugins instalados**.
 | **WordPress Hooks API** | Integración con `wp_footer`, `admin_menu`, `admin_init` |
 | **Nonce Verification** | Protección CSRF en formularios de admin |
 | **i18n (gettext)** | Soporte multilingüe completo |
-
----
-
-## ❓ FAQ
-
-**¿Cuántos agentes puedo agregar con la versión gratuita?**
-La versión Lite soporta hasta 2 agentes. Para agentes ilimitados, pasate a Premium.
-
-**¿El botón se muestra cuando no hay agentes activos?**
-No. El botón permanece oculto hasta que algún agente configurado esté dentro de su horario y días de atención.
-
-**¿Soporta horarios nocturnos?**
-Sí. Si la hora de inicio es posterior a la de fin (ej: 22:00–06:00), el plugin lo interpreta como turno nocturno.
-
-**¿Es compatible con page builders?**
-Sí. El botón se inyecta vía `wp_footer`, así que funciona con Elementor, Divi, Beaver Builder y cualquier theme estándar.
-
-**¿Qué formato debe tener el número de teléfono?**
-Solo dígitos (6–15), con código de país incluido y sin el `+` inicial (ej: `5491158887777`).
-
-**¿Hace más lento mi sitio?**
-No. El plugin es completamente liviano: no carga frameworks y usa JavaScript vanilla.
 
 ---
 
@@ -182,6 +179,8 @@ No. El plugin es completamente liviano: no carga frameworks y usa JavaScript van
 
 ## 🔄 Changelog
 
+Ver el [CHANGELOG.md](./CHANGELOG.md) completo.
+
 ### [1.0.0] — 2026-07-26
 - 🚀 Release inicial.
 - Panel de administración con gestión de agentes (nombre, teléfono, horarios, días).
@@ -190,13 +189,16 @@ No. El plugin es completamente liviano: no carga frameworks y usa JavaScript van
 - Soporte completo i18n (text domain: `agent-rotator-for-wa`).
 - Verificación Nonce y sanitización/validación estricta.
 
-Ver [CHANGELOG.md](CHANGELOG.md) para el historial completo.
-
 ---
 
 ## 🤝 Contribuir
 
-¿Encontraste un bug o tenés una idea? Abrí un [Issue](https://github.com/igpaolillo-nrd/Rotator-Agent-for-WhatsApp/issues). Para preguntas y conversación general, usá [Discussions](https://github.com/igpaolillo-nrd/Rotator-Agent-for-WhatsApp/discussions).
+¿Encontraste un bug o tenés una idea de mejora?
+
+- 🐛 [Abrí un Issue](https://github.com/igpaolillo-nrd/Rotator-Agent-for-WhatsApp/issues)
+- 💬 [Participá en Discussions](https://github.com/igpaolillo-nrd/Rotator-Agent-for-WhatsApp/discussions)
+
+Toda contribución es bienvenida.
 
 ---
 
@@ -206,7 +208,7 @@ Ver [CHANGELOG.md](CHANGELOG.md) para el historial completo.
   <tr>
     <td align="center">
       <a href="https://github.com/igpaolillo-nrd">
-        <img src="https://github.com/igpaolillo-nrd.png" width="100" style="border-radius:50%">
+        <img src="https://github.com/igpaolillo-nrd.png?size=100" width="100" style="border-radius:50%">
         <br>
         <strong>Ivan Paolillo</strong>
       </a>
