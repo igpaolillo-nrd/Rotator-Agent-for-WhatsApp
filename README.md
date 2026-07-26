@@ -1,81 +1,251 @@
-# Agent Rotator for WhatsApp — Lite
+<div align="center">
 
-> Simple and clean contact rotator for WordPress. Adds a floating WhatsApp button that distributes incoming messages across your agents based on their active schedule.
+  <h1>🔄 Agent Rotator for WhatsApp</h1>
+  <p><strong>WordPress Plugin</strong> — Distribuye contactos entrantes entre agentes según horario y disponibilidad</p>
 
-![Version](https://img.shields.io/badge/version-1.0.0-brightgreen)
-![WordPress](https://img.shields.io/badge/WordPress-5.9%2B-21759b?logo=wordpress&logoColor=white)
-![PHP](https://img.shields.io/badge/PHP-7.4%2B-777bb4?logo=php&logoColor=white)
-![License](https://img.shields.io/badge/license-GPLv2%2B-blue)
-![Dependencies](https://img.shields.io/badge/dependencies-none-success)
+  <p>
+    <img src="https://img.shields.io/badge/version-1.0.0-blue?style=flat-square" alt="Version">
+    <img src="https://img.shields.io/badge/WordPress-5.9%2B-21759b?style=flat-square&logo=wordpress" alt="WordPress">
+    <img src="https://img.shields.io/badge/PHP-7.4%2B-777bb4?style=flat-square&logo=php" alt="PHP">
+    <img src="https://img.shields.io/badge/License-GPLv2-green?style=flat-square" alt="License">
+    <img src="https://img.shields.io/badge/Vanilla%20JS-No%20jQuery-f7df1e?style=flat-square&logo=javascript" alt="Vanilla JS">
+  </p>
+
+  <p>
+    <a href="https://nrd.com.ar"><strong>🌐 Sitio Web</strong></a> •
+    <a href="https://nrd.com.ar/contacto"><strong>💼 Contratar Premium</strong></a> •
+    <a href="#-instalación"><strong>📥 Instalación</strong></a>
+  </p>
+
+  <br>
+  <img src="./assets/screenshot-frontend.png" alt="Botón flotante de WhatsApp" width="400">
+</div>
 
 ---
 
-## ✨ Features
+## 📋 Tabla de Contenidos
 
-- 🗓️ **Working days per agent** — choose which days each agent is active (Mon–Sun).
-- 🕐 **Working hours per agent** — set start/end time. Overnight shifts (e.g. 22:00–06:00) fully supported.
-- 🔄 **Round-robin rotation** — when several agents are active simultaneously, one is picked at random to distribute the load evenly.
-- 🙈 **Smart hiding** — if no agent is on shift, the button stays hidden. Visitors never reach an offline agent.
-- 💬 **Pre-filled message** — configurable global message for the WhatsApp chat.
-- 🔒 **Secure by default** — nonce-protected settings form (CSRF-safe), strict sanitisation and validation on every save.
-- 🌐 **i18n ready** — fully translatable. Text Domain: `agent-rotator-for-wa`.
-- 🪶 **Zero dependencies** — no jQuery, no external libraries. Pure PHP + vanilla JS.
+- [Descripción](#-descripción)
+- [Demo](#-demo)
+- [Características](#-características)
+- [Lite vs Premium](#-lite-vs-premium)
+- [Instalación](#-instalación)
+- [Configuración](#-configuración)
+- [Stack Técnico](#-stack-técnico)
+- [FAQ](#-faq)
+- [Screenshots](#-screenshots)
+- [Changelog](#-changelog)
+- [Contribuir](#-contribuir)
+- [Autor](#-autor)
+- [Licencia](#-licencia)
 
-**Lite version:** up to **2 agents**.
-→ Need unlimited agents and extra features? [Contact me for the Premium version](https://nrd.com.ar/contacto).
+---
 
-## 📸 Screenshots
+## 📝 Descripción
 
-| Admin panel | Frontend button |
+**Agent Rotator for WhatsApp** es un plugin ligero para WordPress que agrega un botón flotante de contacto y enruta automáticamente a los visitantes hacia uno de tus agentes disponibles según:
+
+- **Días laborables** — seleccioná qué días está activo cada agente (Lun–Dom).
+- **Horario de atención** — configurá hora de inicio y fin por agente. Soporta turnos nocturnos (ej: 22:00–06:00).
+- **Rotación round-robin** — cuando hay más de un agente activo, se selecciona uno al azar para distribuir la carga.
+
+Si no hay ningún agente activo en el momento del clic, el botón permanece oculto. Los visitantes **nunca** llegan a un agente fuera de horario.
+
+> 🇦🇷 Desarrollado en Argentina para la comunidad global de WordPress.
+
+---
+
+## 🎥 Demo
+
+| Panel de Administración | Botón Flotante (Frontend) |
+|:---:|:---:|
+| <img src="./assets/screenshot-admin.png" alt="Panel admin" width="350"> | <img src="./assets/screenshot-frontend.png" alt="Botón flotante" width="350"> |
+
+> ⚠️ **Nota:** Las imágenes de demo son referenciales. Reemplazar con screenshots reales del plugin.
+
+---
+
+## ✨ Características
+
+- ✅ **Cero dependencias** — sin jQuery, sin librerías externas.
+- ✅ **Mensaje predefinido** configurable desde el panel de administración.
+- ✅ **Totalmente traducible** — listo para i18n (Text Domain: `agent-rotator-for-wa`).
+- ✅ **Formulario protegido con Nonce** — seguro contra CSRF.
+- ✅ **Sanitización y validación estricta** en cada guardado.
+- ✅ **Turnos nocturnos** soportados nativamente.
+- ✅ **Compatible con page builders** — Elementor, Divi, Beaver Builder, etc.
+
+---
+
+## 🆓 Lite vs Premium
+
+| Característica | Lite (Gratis) | Premium |
+|:---|:---:|:---:|
+| Agentes | **2 máximo** | Ilimitados |
+| Rotación round-robin | ✅ | ✅ |
+| Horarios nocturnos | ✅ | ✅ |
+| Mensaje predefinido | ✅ | ✅ |
+| Teléfono alternativo (fallback) por franja horaria | ❌ | ✅ |
+| Personalización de estilos avanzada | ❌ | ✅ |
+| Soporte prioritario | ❌ | ✅ |
+| Estadísticas de clics | ❌ | ✅ |
+| Integración con Google Analytics | ❌ | ✅ |
+
+🔗 **[Solicitar versión Premium](https://nrd.com.ar/contacto)**
+
+---
+
+## 📥 Instalación
+
+**Requisitos:** WordPress 5.9+ · PHP 7.4+
+
+### Método 1: Descarga directa (recomendado)
+
+1. Descargá el último release desde [GitHub Releases](https://github.com/igpaolillo-nrd/Rotator-Agent-for-WhatsApp/releases).
+2. En tu WordPress, andá a **Plugins > Añadir nuevo > Subir plugin**.
+3. Seleccioná el archivo `.zip` descargado e instalalo.
+4. Activá el plugin.
+5. Andá a **WA Rotator** en el sidebar del admin.
+
+### Método 2: Instalación manual
+
+```bash
+# Clonar el repositorio
+git clone https://github.com/igpaolillo-nrd/Rotator-Agent-for-WhatsApp.git
+
+# Subir la carpeta del plugin a /wp-content/plugins/ via FTP/SFTP
+cp -r Rotator-Agent-for-WhatsApp/agent-rotator-for-wa /ruta/a/tu/wordpress/wp-content/plugins/
+```
+
+Luego activalo desde **Plugins > Plugins instalados**.
+
+---
+
+## ⚙️ Configuración
+
+1. Andá a **WA Rotator** en el menú lateral del admin.
+2. Agregá tus agentes:
+   - **Nombre** — nombre visible del agente.
+   - **Teléfono** — solo dígitos, sin espacios ni guiones. Incluí el código de país sin el `+` (ej: `5491158887777`).
+   - **Horario** — hora de inicio y fin.
+   - **Días activos** — marcá los días que atiende.
+3. Opcional: configurá un **mensaje predefinido global**.
+4. Guardá los cambios — el botón flotante aparecerá automáticamente cuando haya al menos un agente activo.
+
+---
+
+## 🛠️ Stack Técnico
+
+| Tecnología | Uso |
 |---|---|
-| ![Admin panel](assets/screenshot-admin.png) | ![Floating button](assets/screenshot-frontend.png) |
+| **PHP 7.4+** | Backend, hooks de WordPress, sanitización |
+| **Vanilla JavaScript** | Lógica de rotación en frontend, sin jQuery |
+| **WordPress Hooks API** | Integración con `wp_footer`, `admin_menu`, `admin_init` |
+| **Nonce Verification** | Protección CSRF en formularios de admin |
+| **i18n (gettext)** | Soporte multilingüe completo |
 
-## 📦 Installation
-
-1. [Download the latest release](../../releases/latest) (`agent-rotator-for-wa.zip`).
-2. In WordPress, go to **Plugins → Add New → Upload Plugin** and choose the ZIP — or upload the `agent-rotator-for-wa` folder to `/wp-content/plugins/`.
-3. Activate the plugin through the **Plugins** screen.
-4. Go to **WA Rotator** in the admin sidebar.
-5. Add your agents: name, phone number (digits only, with country code, no `+`), working hours and active days.
-6. Optionally set a global pre-filled message.
-7. **Save Changes** — the floating button appears automatically when at least one agent is on shift.
-
-## ⚙️ Requirements
-
-- WordPress 5.9+
-- PHP 7.4+
+---
 
 ## ❓ FAQ
 
-**How many agents can I add?**
-The Lite version supports up to 2 agents. Premium removes the limit.
+**¿Cuántos agentes puedo agregar con la versión gratuita?**
+La versión Lite soporta hasta 2 agentes. Para agentes ilimitados, pasate a Premium.
 
-**Does the button show when no agents are active?**
-No. It stays hidden until a configured agent is within their working hours and days.
+**¿El botón se muestra cuando no hay agentes activos?**
+No. El botón permanece oculto hasta que algún agente configurado esté dentro de su horario y días de atención.
 
-**Are overnight schedules supported?**
-Yes. If the start time is later than the end time (e.g. 22:00–06:00), it's treated as an overnight shift.
+**¿Soporta horarios nocturnos?**
+Sí. Si la hora de inicio es posterior a la de fin (ej: 22:00–06:00), el plugin lo interpreta como turno nocturno.
 
-**Is it compatible with page builders?**
-Yes. The button is injected via `wp_footer`, so it works with Elementor, Divi, Beaver Builder and any standard theme.
+**¿Es compatible con page builders?**
+Sí. El botón se inyecta vía `wp_footer`, así que funciona con Elementor, Divi, Beaver Builder y cualquier theme estándar.
 
-**Phone number format?**
-Digits only, 6–15 digits, country code included without the leading `+` (e.g. `5491158887777`).
+**¿Qué formato debe tener el número de teléfono?**
+Solo dígitos (6–15), con código de país incluido y sin el `+` inicial (ej: `5491158887777`).
 
-**Does it slow down my site?**
-No. No frameworks, no external requests — just lightweight vanilla JS.
+**¿Hace más lento mi sitio?**
+No. El plugin es completamente liviano: no carga frameworks y usa JavaScript vanilla.
 
-## 🤝 Contributing
+---
 
-Issues and feature requests are welcome in the [Issues tab](../../issues). For general conversation, use [Discussions](../../discussions).
+## 📸 Screenshots
 
-## 📄 License
+### 1. Panel de administración — Gestión de agentes
+<img src="./assets/screenshot-admin.png" alt="Panel admin" width="700">
 
-GPLv2 or later — see [LICENSE](LICENSE).
+### 2. Botón flotante en el frontend
+<img src="./assets/screenshot-frontend.png" alt="Frontend" width="400">
 
-## 👤 Author
+> 💡 **Tip:** Las screenshots deben colocarse en la carpeta `/assets/` del repositorio.
 
-**Ivan Paolillo — NRD**
-Diseñador Gráfico & Multimedial · UX/UI · Fullstack Dev · 🇦🇷 Argentina
+---
 
-🌐 [nrd.com.ar](https://nrd.com.ar) · 📧 [Contacto](https://nrd.com.ar/contacto)
+## 🔄 Changelog
+
+### [1.0.0] — 2026-07-26
+- 🚀 Release inicial.
+- Panel de administración con gestión de agentes (nombre, teléfono, horarios, días).
+- Botón flotante con lógica de rotación de agentes.
+- Límite de 2 agentes en versión Lite.
+- Soporte completo i18n (text domain: `agent-rotator-for-wa`).
+- Verificación Nonce y sanitización/validación estricta.
+
+Ver [CHANGELOG.md](CHANGELOG.md) para el historial completo.
+
+---
+
+## 🤝 Contribuir
+
+¿Encontraste un bug o tenés una idea? Abrí un [Issue](https://github.com/igpaolillo-nrd/Rotator-Agent-for-WhatsApp/issues). Para preguntas y conversación general, usá [Discussions](https://github.com/igpaolillo-nrd/Rotator-Agent-for-WhatsApp/discussions).
+
+---
+
+## 👤 Autor
+
+<table>
+  <tr>
+    <td align="center">
+      <a href="https://github.com/igpaolillo-nrd">
+        <img src="https://github.com/igpaolillo-nrd.png" width="100" style="border-radius:50%">
+        <br>
+        <strong>Ivan Paolillo</strong>
+      </a>
+      <br>
+      Diseñador Gráfico & Multimedial · UX/UI · Docente · Fullstack Dev
+      <br>
+      🇦🇷 Argentina
+    </td>
+  </tr>
+</table>
+
+- 🌐 **Web:** [nrd.com.ar](https://nrd.com.ar)
+- 💼 **LinkedIn:** [linkedin.com/in/ivan-paolillo](https://linkedin.com/in/ivan-paolillo)
+- 📧 **Contacto:** [nrd.com.ar/contacto](https://nrd.com.ar/contacto)
+
+---
+
+## 📄 Licencia
+
+Este proyecto está licenciado bajo la **GPLv2 o posterior**.
+
+```
+Agent Rotator for WhatsApp
+Copyright (C) 2026  Ivan Paolillo / NRD
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 2 of the License, or
+(at your option) any later version.
+```
+
+Consultá el archivo [LICENSE](./LICENSE) para el texto completo.
+
+---
+
+<div align="center">
+  <br>
+  <p>⭐ Si te sirvió este plugin, dejá una estrella en el repo — ayuda un montón.</p>
+  <p>💬 ¿Encontraste un bug o tenés una idea? Abrí un <a href="https://github.com/igpaolillo-nrd/Rotator-Agent-for-WhatsApp/issues">Issue</a>.</p>
+  <br>
+  <sub>Hecho con ❤️ en Argentina por <a href="https://nrd.com.ar">NRD</a></sub>
+</div>
