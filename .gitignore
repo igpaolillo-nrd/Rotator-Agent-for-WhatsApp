@@ -1,0 +1,8 @@
+# Premium features (live in a separate private repo)
+/premium/
+/pro/
+*license-manager*
+*premium*
+
+# macOS
+.DS_Store
